@@ -13,4 +13,4 @@ msgNum = len(server.list()[1])
 
 for i in range(msgNum):
     for msg in server.retr(i+1)[1]:
-        print (msg.decode())
+        print(msg.decode())
