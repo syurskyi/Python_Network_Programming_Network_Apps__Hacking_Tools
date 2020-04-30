@@ -1,0 +1,37 @@
+Python provides two levels of access to network services. You're able to access to socket capabilities in the
+underlying operating system and create both clients and servers for connection-oriented (TCP) and connectionless
+protocols (UDP)
+
+In addition, Python also has libraries the provide access to specific protocols, such as FTP, HTTP and many others
+
+What are Sockets?
+Sockets provide the endpoints of a bidirectional communications channel. Sockets can transfer data within a process
+, between processes on the same machine or between processes on different server in different geographical location.
+
+Sockets can be used over a number of different channel types: Unix domain sockets, TCP, UDP and so on. The socket
+library allows you to handle the common transports used as well as a generic interface for handling the remaining
+transports.
+
+Domain - The family of protocols that is used as the transport mechanism. These values are constants such as AF_INT,
+PF_INET, PF_UNIX, PF_X25, and so on.
+
+Type - The type of communications between the two endpoints, typically SOCK_STREAM (TCP) for connection-oriented
+protocols and SOCK_DGRAM (UDP) for connectionless protocols
+
+Protocol - This used to identify a variant of a protocol within a domain and type.
+
+Host - The identifier of a network interface such as a string, which can be a host name, a dotted-quad address (IP address)
+, or an IPV6 address in colon notation.
+
+Port - Each server listens for clients calling on one or more ports. A port may be a integer port number, a string 
+containing a port number, or the name of a server.
+
+In order to create a socket, you use the socket.socket() function from the socket module, which has the following syntax:
+
+s = socket.socket(socket_family, socket_type, protocol = 0)
+
+socket_family - AF_UNIX or AF_INET, We'll be using AF_INET
+socket_type - SOCK_STREAM(TCP) or SOCK_DGRAM(UDP)
+protocol - Does not need to be provided and will default to 0
+
+After creating your socket object, you can then use the socket function to create either a client or server application
